@@ -1,1 +1,0 @@
-# gestor-pacientes.github.io
