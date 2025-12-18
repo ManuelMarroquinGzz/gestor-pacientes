@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { validarPaciente } from "../utils/validarPaciente";
+
 
 const FormularioPaciente = ({ pacienteEditando, onGuardar, onCancelar }) => {
   const [formData, setFormData] = useState({
@@ -43,14 +45,22 @@ const FormularioPaciente = ({ pacienteEditando, onGuardar, onCancelar }) => {
     setFormData((prev) => ({ ...prev, [id]: value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const paciente = {
-      ...formData,
-      edad: formData.edad ? Number(formData.edad) : null,
-    };
-    onGuardar(paciente);
+const handleSubmit = (e) => {
+  e.preventDefault();
+  const paciente = {
+    ...formData,
+    edad: formData.edad ? Number(formData.edad) : null,
   };
+
+  const pacienteValido = validarPaciente(paciente);
+  if (!pacienteValido) {
+    alert("Datos inválidos. Revisa los campos.");
+    return;
+  }
+
+  onGuardar(pacienteValido);
+};
+
 
   return (
     <form id="paciente-form" onSubmit={handleSubmit}>
