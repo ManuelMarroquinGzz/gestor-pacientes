@@ -1,15 +1,18 @@
-import { Paciente } from "../types/Paciente";
+import type { Paciente } from "../types/Paciente";
 
-export function validarPaciente(data: any): Paciente | null {
-if (
-    typeof data.nombre === "string" &&
-    typeof data.apellido === "string" &&
-    (typeof data.edad === "number" || data.edad === null) &&
-    typeof data.doctor === "string" &&
-    typeof data.especialidad === "string"
-) {
+export function validarPaciente(data: Partial<Paciente>): Paciente | null {
+  if (
+    typeof data.nombre === "string" && data.nombre.trim() !== "" &&
+    typeof data.apellido === "string" && data.apellido.trim() !== "" &&
+    ((typeof data.edad === "number" && data.edad > 0) || data.edad === null) &&
+    typeof data.doctor === "string" && data.doctor.trim() !== "" &&
+    typeof data.especialidad === "string" && data.especialidad.trim() !== "" &&
+    typeof data.diagnostico === "string" &&
+    typeof data.tratamiento === "string" &&
+    typeof data.comentario === "string"
+  ) {
     return data as Paciente;
-    }
-    console.error("Datos inválidos para Paciente:", data);
-    return null;
+  }
+  console.error("Datos inválidos para Paciente:", data);
+  return null;
 }
