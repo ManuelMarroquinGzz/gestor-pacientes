@@ -1,9 +1,9 @@
-// src/hooks/usePacientes.js
+
 import { useState, useMemo } from "react";
 import * as XLSX from "xlsx";
 import { Document, Packer, Paragraph, TextRun } from "docx";
 
-//  Firestore
+
 import {
   collection,
   getDocs,
@@ -12,14 +12,14 @@ import {
   deleteDoc,
   doc
 } from "firebase/firestore";
-import { db } from "../firebase"; // Asegúrate que este path sea correcto
+import { db } from "../firebase"; 
 
 export function usePacientes() {
   const [pacientes, setPacientes] = useState([]);
   const [busqueda, setBusqueda] = useState("");
   const [pacienteEditando, setPacienteEditando] = useState(null);
 
-  // Referencia a la colección
+  
   const colRef = collection(db, "pacientes");
 
   //  Obtener pacientes desde Firestore
