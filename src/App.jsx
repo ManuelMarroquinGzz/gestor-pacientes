@@ -48,10 +48,10 @@ const App = () => {
     setFormVisible((prev) => !prev);
 
     if (!formVisible) {
-      // Si se abre el formulario y no hay edición, limpiar selección
+      
       if (!pacienteEditando) setPacienteEditando(null);
     } else {
-      // Si se cierra, limpiar edición
+      
       setPacienteEditando(null);
     }
   };
