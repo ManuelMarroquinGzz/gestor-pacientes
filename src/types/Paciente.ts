@@ -1,5 +1,5 @@
 export interface Paciente {
-  id?: string; // generado automáticamente por Firestore
+  id?: string; 
     nombre: string;
     apellido: string;
     edad: number | null;
