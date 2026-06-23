@@ -22,7 +22,7 @@ export function usePacientes() {
   
   const colRef = collection(db, "pacientes");
 
-  //  Obtener pacientes desde Firestore
+  
   const obtenerPacientes = async () => {
     try {
       const snapshot = await getDocs(colRef);
@@ -36,7 +36,7 @@ export function usePacientes() {
     }
   };
 
-  //  Agregar paciente
+  
   const agregarPaciente = async (paciente) => {
     try {
       await addDoc(colRef, paciente);
@@ -47,7 +47,7 @@ export function usePacientes() {
     }
   };
 
-  //  Actualizar paciente
+  
   const actualizarPaciente = async (idOriginal, paciente) => {
     try {
       const ref = doc(db, "pacientes", idOriginal);
@@ -59,7 +59,7 @@ export function usePacientes() {
     }
   };
 
-  //  Eliminar paciente
+  
   const eliminarPaciente = async (id) => {
     try {
       const ref = doc(db, "pacientes", id);
@@ -71,7 +71,7 @@ export function usePacientes() {
     }
   };
 
-  //  Buscador
+  
   const pacientesFiltrados = useMemo(() => {
     const texto = busqueda.toLowerCase();
     if (!texto) return pacientes;
@@ -82,7 +82,7 @@ export function usePacientes() {
     );
   }, [pacientes, busqueda]);
 
-  //  Exportar a Excel
+  
   const exportarExcel = () => {
     if (!pacientes.length) {
       alert("No hay pacientes para exportar");
@@ -94,7 +94,7 @@ export function usePacientes() {
     XLSX.writeFile(wb, "pacientes.xlsx");
   };
 
-  //  Exportar a Word
+  
   const exportarWord = async () => {
     if (!pacientes.length) {
       alert("No hay pacientes para exportar");
