@@ -31,7 +31,7 @@ tr:nth-child(even) {
     display: none;
 }
 
-/*BOTONES Y FORMULARIO*/
+
 #toggle-form {
     padding: 10px 15px;
     background: #4a90e2;
@@ -61,7 +61,7 @@ tr:nth-child(even) {
     min-height: 60px;
 }
 
-/*BOTONES*/
+
 .btn-editar {
     background: #ffc107;
     border: none;
@@ -80,7 +80,7 @@ tr:nth-child(even) {
     color: white;
 }
 
-/*BARRA SUPERIOR*/
+
 .barra-superior {
     display: flex;
     flex-wrap: wrap;
@@ -97,7 +97,7 @@ tr:nth-child(even) {
     box-sizing: border-box;
 }
 
-/*MENÚ DESPLEGABLE (PC)*/
+
 .menu-opciones {
     position: relative;
     display: inline-block;
@@ -144,7 +144,7 @@ tr:nth-child(even) {
     background: #f0f0f0;
 }
 
-/*MODO OSCURO*/
+
 .dark-mode {
     background-color: #1e1e1e;
     color: #e5e5e5;
@@ -182,7 +182,7 @@ tr:nth-child(even) {
     background: #333;
 }
 
-/*MÓVIL*/
+
 @media (max-width: 600px) {
 
     
