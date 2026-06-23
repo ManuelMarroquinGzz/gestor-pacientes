@@ -22,12 +22,12 @@ const App = () => {
   const [formVisible, setFormVisible] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
 
-  // Cargar pacientes desde Firestore al iniciar
+  
   useEffect(() => {
     obtenerPacientes();
   }, []);
 
-  // Modo oscuro con persistencia
+  
   useEffect(() => {
     const stored = localStorage.getItem("dark-mode") === "true";
     setDarkMode(stored);
@@ -43,7 +43,7 @@ const App = () => {
     localStorage.setItem("dark-mode", darkMode);
   }, [darkMode]);
 
-  // Mostrar/ocultar formulario
+  
   const toggleForm = () => {
     setFormVisible((prev) => !prev);
 
@@ -56,7 +56,7 @@ const App = () => {
     }
   };
 
-  // Guardar paciente (nuevo o editado)
+  
   const handleGuardar = async (paciente) => {
     if (pacienteEditando) {
       await actualizarPaciente(pacienteEditando.id, paciente);
@@ -68,13 +68,13 @@ const App = () => {
     setFormVisible(false);
   };
 
-  // Editar paciente
+  
   const handleEditar = (paciente) => {
     setPacienteEditando(paciente);
     if (!formVisible) setFormVisible(true);
   };
 
-  // Eliminar paciente
+  
   const handleEliminar = async (id) => {
     const ok = window.confirm("¿Seguro que deseas eliminar este paciente?");
     if (!ok) return;
