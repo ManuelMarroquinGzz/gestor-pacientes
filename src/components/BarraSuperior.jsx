@@ -16,7 +16,7 @@ const BarraSuperior = ({ formVisible, toggleForm, busqueda, setBusqueda, darkMod
         onChange={(e) => setBusqueda(e.target.value)}
       />
 
-      {/* AQUÍ va MenuOpciones, dentro de la barra */}
+      {}
       <MenuOpciones
         darkMode={darkMode}
         onToggleDark={onToggleDark}
